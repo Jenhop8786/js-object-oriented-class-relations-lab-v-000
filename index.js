@@ -7,4 +7,16 @@ class Driver {
     this.id = driverId++;
     store.drivers.push(this);
   }
+
+  let store = {passengers: [], trips: [], drivers: []};
+  let passengerId = 0 
+
+  class Passenger {
+    constructor(name) {
+      this.name = name;
+      this.id = passengerId++;
+      store.passengers.push(this);
+      
+    }
+  }
 }
