@@ -8,7 +8,18 @@ class Driver {
     store.drivers.push(this);
   }
 
-  
+  trips(){
+    return store.trips.().maps(trip => {
+      return trip.passenger();
+    })
+  }
+
+  passengers() {
+    return this.trips().map(trip => {
+      return trip.passenger();
+    })
+  }
+}
 
   let passengerId = 0
 
