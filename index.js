@@ -8,7 +8,7 @@ class Driver {
     store.drivers.push(this);
   }
 
-  trips(){
+  trips() {
     return store.trips.().maps(trip => {
       return trip.passenger();
     })
@@ -28,7 +28,15 @@ class Driver {
       this.name = name;
       this.id = passengerId++;
       store.passengers.push(this);
-
     }
+
+     drivers() {
+       return this.trips().map(trip => {
+         return trip.driver();
+       })
+     }
+
+     
+
   }
 }
