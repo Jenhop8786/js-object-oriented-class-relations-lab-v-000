@@ -61,7 +61,7 @@ class Driver {
 
     passenger() {
       return store.passengers.find(passenger => {
-        return driver.id === this.passengerId;
+        return passenger.id === this.passengerId;
       })
     }
   }
