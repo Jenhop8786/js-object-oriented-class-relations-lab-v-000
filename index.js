@@ -9,8 +9,8 @@ class Driver {
   }
 
   trips() {
-    return store.trips.().maps(trip => {
-      return trip.passenger();
+    return store.trips.filter(trip => {
+      return trip.driverId == this.id;
     })
   }
 
@@ -43,7 +43,7 @@ class Driver {
      }
   }
 
-  let tripId = 0 
+  let tripId = 0
 
   class Trip {
     constructor(driver, passenger) {
@@ -54,7 +54,7 @@ class Driver {
     }
 
     driver() {
-      return store.drivers.find(driver => { 
+      return store.drivers.find(driver => {
         return driver.id === this.driverId;
       })
     }
@@ -65,4 +65,3 @@ class Driver {
       })
     }
   }
-
